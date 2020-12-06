@@ -2,9 +2,10 @@
 //this stores the game states
 const gameState = {}
 
-/*adds assets to be used inn the game eg  images, has two parameters;
+/*adds assets to be used inn the game eg  images,audios, has two parameters;
 a key and a path to the asset*/
 function preload() {
+  this.load.audio('key',"path")
   this.load.image('codey', 'https://content.codecademy.com/courses/learn-phaser/codey.png');
 }
 
@@ -13,6 +14,8 @@ function create() {
   gameState.codey = this.add.sprite(150, 200, 'codey')
   // Set cursor keys here!
   gameState.cursors = this.input.keyboard.createCursorKeys();
+  //set audio
+  gameState.key =this.sound.add('key')
 }
 
 /*updates the games items   */
