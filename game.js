@@ -43,7 +43,7 @@ function create(){
     loop:true //continue creating bugs as long as this is true
   })
 
-  gameScore.scoreText = this.add.text(195, 485, 'Score: 0')//score display
+  gameState.scoreText = this.add.text(195, 485, 'Score: 0')//score display
   this.physics.add.collider(bugs,platforms, function(bug){
     //we are adding a collider bvetween bugs and the platform
     //when a bug colides with the plartform, we should destroy it hence the destroy method
@@ -86,9 +86,10 @@ function update(){
 
 //the config object defines our whole game,
 const config = {
-  width:500,//sets the game width;
+  type: Phaser.AUTO,
+  width:450,//sets the game width;
   height:500,//sets game height
-  backgroundColor:blue,
+  backgroundColor:"b9eaff",
   scene:{
     //scene is an object that generates our scene for us 
     //we call the preload,create and update sfunctions here
@@ -106,4 +107,4 @@ const config = {
   }
 }
 
-const game = new Game.Phaser(config)
+const game = new Phaser.Game(config)
