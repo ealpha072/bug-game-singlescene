@@ -40,6 +40,12 @@ function create(){
     enemyGenerateLoop.destroy();
     this.physics.pause()
     this.add.text(100,100, 'Game Over',{fontsize:'15px',fill:'#000000'})
+    this.add.text(100, 120 , "Click to restart",{fontsize:'30px',fill:'#000000'})
+
+    this.input.on('pointerup',()=>{
+      gameState.score = 0;
+      this.scene.restart();
+    })
   })
 
 }
